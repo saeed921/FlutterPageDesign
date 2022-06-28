@@ -1,3 +1,5 @@
+import 'package:design_a_pictures/my_custom_container.dart';
+import 'package:design_a_pictures/text_styles.dart';
 import 'package:flutter/material.dart';
 const String imageUrl='https://thumbs.dreamstime.com/b/sajek-'
     'valley-rangamati-sajek-valley-rangamati-bangladesh-237229905.jpg';
@@ -30,29 +32,60 @@ void main() {
                   width: double.infinity
                     ,height: 350,
                   fit: BoxFit.cover,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      FlutterLogo(),
-                      Text('Welcome to flutter'),
 
-                    ]
-                  ),
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text('Hello Flutter',
-                      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
-                      color: Colors.blue),),
-                      Text('Hello Dart',
-                          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
-                              color: Colors.green)),
-                      Text('Hello Android',
-                          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
-                              color: Colors.yellow)),
-                      Text('Hello Ios',
-                          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
-                              color: Colors.red)),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ListTile(
+                          onTap: (){
+                            //we can set here any kind of conditions
+                          },
+                          shape: ContinuousRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          //color for Tile
+                          tileColor: Colors.blueGrey,
+                          title: Text('Welcome to Sajek', style: txtWhite,),
+                          subtitle: Text('Welocme to our Resort', style: txtWhite,),
+                          //leading: Icon(Icons.favorite),
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(Icons.star,color: Colors.yellow,size: 28),
+
+                              Text('4.5', style: txtWhite,),
+                            ],
+                          ),
+
+                        ),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                        children: [
+                          // we take container for decoration
+                          MyColumnButton(),
+                          MyColumnButton(),
+                          MyColumnButton(),
+                        ],
+
+                      ),
+                      //we can also design by ListTile Widget it will be more easier for us
+
+                      // Text('Hello Flutter',
+                      // style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
+                      // color: Colors.blue),),
+                      // Text('Hello Dart',
+                      //     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
+                      //         color: Colors.green)),
+                      // Text('Hello Android',
+                      //     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
+                      //         color: Colors.yellow)),
+                      // Text('Hello Ios',
+                      //     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
+                      //         color: Colors.red)),
                       Padding(
                         padding:  const EdgeInsets.all(16.0),
                           child: Text(longText,
