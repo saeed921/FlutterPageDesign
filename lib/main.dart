@@ -1,3 +1,4 @@
+import 'package:design_a_pictures/home_page.dart';
 import 'package:design_a_pictures/my_custom_container.dart';
 import 'package:design_a_pictures/text_styles.dart';
 import 'package:flutter/material.dart';
@@ -18,101 +19,25 @@ Nunc eget lorem dolor sed. Risus in hendrerit gravida rutrum quisque non tellus 
 
 Eu lobortis elementum nibh tellus molestie nunc. Venenatis a condimentum vitae sapien. Faucibus scelerisque eleifend donec pretium vulputate. Neque egestas congue quisque egestas diam. Proin sagittis nisl rhoncus mattis rhoncus urna. Dignissim enim sit amet venenatis urna cursus. Consectetur lorem donec massa sapien faucibus et molestie ac feugiat. Sed libero enim sed faucibus turpis in eu mi bibendum. Est ultricies integer quis auctor elit sed vulputate. Morbi blandit cursus risus at ultrices mi tempus. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Congue nisi vitae suscipit tellus mauris a. Aenean sed adipiscing diam donec adipiscing tristique risus. Neque aliquam vestibulum morbi blandit.''';
 void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Image.network(imageUrl,
-                  width: double.infinity
-                    ,height: 350,
-                  fit: BoxFit.cover,),
+  runApp(myApp()
+      );
+}
 
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: ListTile(
-                          onTap: (){
-                            //we can set here any kind of conditions
-                          },
-                          shape: ContinuousRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          //color for Tile
-                          tileColor: Colors.blueGrey,
-                          title: Text('Welcome to Sajek', style: txtWhite,),
-                          subtitle: Text('Welocme to our Resort', style: txtWhite,),
-                          //leading: Icon(Icons.favorite),
-                          trailing: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(Icons.star,color: Colors.yellow,size: 28),
+class myApp extends StatelessWidget {
+  const myApp({
+    Key? key,
+  }) : super(key: key);
 
-                              Text('4.5', style: txtWhite,),
-                            ],
-                          ),
-
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
-                        children: [
-                          // we take container for decoration
-                          MyColumnButton(),
-                          MyColumnButton(),
-                          MyColumnButton(),
-                        ],
-
-                      ),
-                      //we can also design by ListTile Widget it will be more easier for us
-
-                      // Text('Hello Flutter',
-                      // style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
-                      // color: Colors.blue),),
-                      // Text('Hello Dart',
-                      //     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
-                      //         color: Colors.green)),
-                      // Text('Hello Android',
-                      //     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
-                      //         color: Colors.yellow)),
-                      // Text('Hello Ios',
-                      //     style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
-                      //         color: Colors.red)),
-                      Padding(
-                        padding:  const EdgeInsets.all(16.0),
-                          child: Text(longText,
-                        style: TextStyle(fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                            color: Colors.black),),
-
-                        ),
-                      ],)
-                    ],
-
-
-
-                  ),
-
-
-
-
-              ),
-            ),
-        ),
-      )
-      ));
-
-
-
-
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
+      home: HomePage(),
+        );
+  }
 }
 
 

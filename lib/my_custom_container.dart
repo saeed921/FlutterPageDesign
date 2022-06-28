@@ -3,7 +3,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyColumnButton extends StatelessWidget {
-  const MyColumnButton({Key? key}) : super(key: key);
+  final IconData iconData;
+  final String txt;
+  final VoidCallback onPressed;
+  const MyColumnButton({Key? key, required this.iconData,
+  required this.txt,
+  required this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +41,11 @@ class MyColumnButton extends StatelessWidget {
         //call button
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(Icons.call, color: Colors.blue,),
+          Icon(iconData, color: Colors.blue,),
           SizedBox(
             width: 50,
           ),
-          Text('Call', style: txtWhite,),
+          Text(txt, style: txtWhite,),
           // Icon(Icons.route, color: Colors.blue,),
           // SizedBox(
           //   width: 50,
